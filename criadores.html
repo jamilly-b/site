@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zone para Criadores: Seu evento encontra o público certo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fontsource-variable/satoshi@latest/index.min.css" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #131313;
+  --purple:  #5C0F7A;
+  --purple2: #7B3FA0;
+  --white:   #F3F2F5;
+  --gray:    #1a1a1a;
+  --gray2:   #222222;
+  --muted:   #888;
+  --border:  rgba(243,242,245,0.07);
+  --font-display: 'Special Gothic Expanded One', sans-serif;
+  --font-body: 'Satoshi Variable', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(19,19,19,0.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo img { height: 28px; width: auto; display: block; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(243,242,245,0.5);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+
+.nav-cta {
+  background: var(--purple) !important;
+  color: var(--white) !important;
+  padding: 0.5rem 1.375rem !important;
+  border-radius: 100px !important;
+  font-weight: 500 !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(--purple2) !important; }
+
+section { padding: 8rem 3rem; }
+
+.section-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--purple2);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-eyebrow::before { display: none; }
+
+/* HERO CRIADORES */
+.hero-c {
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 3rem 7rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-c-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 80% 30%, rgba(92,15,122,0.25) 0%, transparent 65%),
+    var(--black);
+}
+
+.hero-c-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(243,242,245,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243,242,245,0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 0%, transparent 100%);
+}
+
+.hero-c-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hero-c-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--purple2);
+  margin-bottom: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-c-line { display: none; }
+
+.hero-c-content h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 6vw, 5.75rem);
+  font-weight: 400;
+  line-height: 0.97;
+  letter-spacing: -0.01em;
+  margin-bottom: 2.25rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero-c-content h1 em {
+  font-style: normal;
+  color: var(--purple2);
+}
+
+.hero-c-content p {
+  color: rgba(243,242,245,0.45);
+  font-size: 1.0625rem;
+  font-weight: 300;
+  max-width: 500px;
+  line-height: 1.75;
+  margin-bottom: 2.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-c-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  background: var(--purple);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.9rem 2rem;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover { background: var(--purple2); transform: translateY(-2px); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: rgba(243,242,245,0.55);
+  text-decoration: none;
+  padding: 0.9rem 1.75rem;
+  border-radius: 100px;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  border: 1px solid rgba(243,242,245,0.1);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.btn-ghost:hover { color: var(--white); border-color: rgba(243,242,245,0.2); }
+
+/* DIFERENCIAL */
+.diff {
+  background: var(--gray);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.diff-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.diff-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.25vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  max-width: 600px;
+  margin-bottom: 4rem;
+}
+
+.diff-inner h2 em { font-style: normal; color: var(--purple2); }
+
+.diff-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.diff-text {
+  color: rgba(243,242,245,0.45);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+.diff-text p + p { margin-top: 1.25rem; }
+
+.diff-text strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.diff-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.diff-point {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.diff-point-num {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--purple2);
+  opacity: 0.7;
+  padding-top: 0.2rem;
+}
+
+.diff-point h3 {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.01em;
+}
+
+.diff-point p {
+  font-size: 0.8125rem;
+  color: rgba(243,242,245,0.4);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* COMO CRIAR */
+.how-c-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.how-c-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.25vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+}
+
+.steps-c {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.step-c {
+  padding: 3rem 2.5rem 3rem 0;
+  border-right: 1px solid var(--border);
+}
+
+.step-c:last-child { border-right: none; }
+.step-c:not(:first-child) { padding-left: 2.5rem; }
+
+.step-c-num {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: var(--purple2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0.7;
+}
+
+.step-c h3 {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 0.625rem;
+  letter-spacing: 0.01em;
+}
+
+.step-c p {
+  font-size: 0.8125rem;
+  color: rgba(243,242,245,0.4);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* PUBLICO */
+.publico {
+  background: var(--gray);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.publico-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.publico-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.25vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.publico-inner h2 em { font-style: normal; color: var(--purple2); }
+
+.publico-lead {
+  color: rgba(243,242,245,0.45);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+.publico-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.stat-cell {
+  background: var(--gray2);
+  padding: 2.5rem;
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.875rem);
+  font-weight: 400;
+  color: var(--purple2);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 0.625rem;
+}
+
+.stat-label {
+  font-size: 0.8125rem;
+  color: rgba(243,242,245,0.4);
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+/* CTA FINAL */
+.cta-c {
+  text-align: center;
+  padding: 10rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-c-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 60%, rgba(92,15,122,0.22) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cta-c h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 4.75rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 0.97;
+  margin-bottom: 1.75rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.cta-c h2 em { font-style: normal; color: var(--purple2); }
+
+.cta-c > p {
+  color: rgba(243,242,245,0.4);
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+  position: relative;
+  line-height: 1.75;
+}
+
+.cta-c-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 3rem;
+}
+
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-logo img { height: 22px; width: auto; display: block; }
+
+.footer-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--white); }
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  color: rgba(243,242,245,0.25);
+  font-size: 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+/* Hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav-drawer {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 150;
+  background: var(--black);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.nav-drawer.open { opacity: 1; pointer-events: all; }
+
+.nav-drawer a {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 6vw, 2.25rem);
+  text-transform: uppercase;
+  color: rgba(243,242,245,0.6);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-drawer a:hover { color: var(--white); }
+
+.nav-drawer .drawer-cta {
+  margin-top: 1rem;
+  background: var(--purple);
+  color: var(--white) !important;
+  padding: 0.875rem 2.5rem;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.25rem; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-drawer { display: flex; }
+
+  section { padding: 5rem 1.25rem; }
+
+  .hero-c { padding: 0 1.25rem 5rem; min-height: 80svh; }
+  .hero-c-content h1 { margin-bottom: 1.5rem; }
+  .hero-c-content p { max-width: 100%; font-size: 0.9375rem; }
+  .hero-c-actions { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-ghost { text-align: center; justify-content: center; }
+
+  .diff-cols { grid-template-columns: 1fr; gap: 3rem; }
+  .diff-inner h2 { margin-bottom: 2.5rem; }
+
+  .how-c-inner h2 { margin-bottom: 2.5rem; }
+  .steps-c { grid-template-columns: 1fr; border-top: none; }
+  .step-c {
+    border-right: none;
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+  }
+  .step-c:not(:first-child) { padding-left: 0; }
+
+  .publico-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .publico-stats { grid-template-columns: 1fr 1fr; }
+
+  .cta-c { padding: 6rem 1.25rem; }
+  .cta-c-actions { flex-direction: column; align-items: stretch; }
+
+  footer { padding: 2.5rem 1.25rem; }
+  .footer-main { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .footer-links { gap: 1.25rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .stat-num { font-size: 1.5rem; }
+  .stat-cell { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo_branco.png" alt="Zone">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="criadores.html" class="active">Para criadores</a></li>
+    <li><a href="suporte.html">Suporte</a></li>
+    <li><a href="#" class="nav-cta">Baixar o app</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html">Início</a>
+  <a href="criadores.html">Para criadores</a>
+  <a href="suporte.html">Suporte</a>
+  <a href="#" class="drawer-cta">Baixar o app</a>
+</div>
+
+<!-- HERO -->
+<section class="hero-c">
+  <div class="hero-c-bg"></div>
+  <div class="hero-c-grid"></div>
+  <div class="hero-c-content">
+    <div class="hero-c-eyebrow">
+      <span class="hero-c-line"></span>
+      Para criadores de eventos
+    </div>
+    <h1>Seu evento encontra<br>o <em>público certo.</em></h1>
+    <p>O Zone não é só onde você publica um evento. É onde o seu evento vai ao encontro de quem realmente quer estar lá.</p>
+    <div class="hero-c-actions">
+      <a href="#" class="btn-primary">Criar um evento</a>
+      <a href="#como-criar" class="btn-ghost">Como funciona</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAL -->
+<section class="diff">
+  <div class="diff-inner">
+    <div class="section-eyebrow">O diferencial</div>
+    <h2>Não somos uma<br>agenda de eventos.<br>Somos uma ferramenta<br>de <em>descoberta.</em></h2>
+    <div class="diff-cols">
+      <div class="diff-text">
+        <p>Outras plataformas organizam eventos. O Zone <strong>leva seus eventos às pessoas certas</strong>, baseado nos gostos e interesses de cada usuário.</p>
+        <p>Quando alguém abre o Zone, ela não está procurando qualquer evento. Ela está procurando diversão, conexão, uma boa noite. O seu evento pode ser exatamente isso para ela.</p>
+        <p>O algoritmo do Zone entende o perfil de cada usuário e recomenda eventos que fazem sentido para aquela pessoa. Seu evento não disputa atenção com tudo, ele aparece para <strong>quem já tem interesse</strong> naquilo que você oferece.</p>
+      </div>
+      <div class="diff-points">
+        <div class="diff-point">
+          <span class="diff-point-num">01</span>
+          <div>
+            <h3>Recomendação personalizada</h3>
+            <p>Seu evento é recomendado para usuários com interesses alinhados ao que você oferece. Não é exposição genérica, é alcance qualificado.</p>
+          </div>
+        </div>
+        <div class="diff-point">
+          <span class="diff-point-num">02</span>
+          <div>
+            <h3>Feed dedicado a eventos</h3>
+            <p>Diferente de redes sociais generalistas, no Zone o foco total é a descoberta de experiências. Seu evento não compete com memes.</p>
+          </div>
+        </div>
+        <div class="diff-point">
+          <span class="diff-point-num">03</span>
+          <div>
+            <h3>Notificações de novos eventos</h3>
+            <p>Usuários que curtem o que você faz podem ser notificados quando você criar novos eventos, criando um público recorrente.</p>
+          </div>
+        </div>
+        <div class="diff-point">
+          <span class="diff-point-num">04</span>
+          <div>
+            <h3>Mapa e localização</h3>
+            <p>Seu evento aparece no mapa para pessoas próximas que estão buscando algo para fazer naquele dia ou região.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO CRIAR -->
+<section id="como-criar">
+  <div class="how-c-inner">
+    <div class="section-eyebrow">Como criar</div>
+    <h2>Publicar um evento<br>é simples e rápido.</h2>
+    <div class="steps-c">
+      <div class="step-c">
+        <div class="step-c-num">01</div>
+        <h3>Cadastre-se no app</h3>
+        <p>Crie seu perfil no Zone com suas informações. Pessoa física ou empresa, o processo é o mesmo e leva poucos minutos.</p>
+      </div>
+      <div class="step-c">
+        <div class="step-c-num">02</div>
+        <h3>Preencha os detalhes do evento</h3>
+        <p>Título, descrição, data, local, tipo de evento e tags. Quanto mais preciso for o preenchimento, mais qualificado é o alcance.</p>
+      </div>
+      <div class="step-c">
+        <div class="step-c-num">03</div>
+        <h3>Publique e alcance seu público</h3>
+        <p>Após análise pela plataforma, seu evento entra no ar e começa a aparecer para os usuários certos. Você pode convidar pessoas e acompanhar as confirmações.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICO ALVO -->
+<section class="publico">
+  <div class="publico-inner">
+    <div>
+      <div class="section-eyebrow">Quem está no Zone</div>
+      <h2>Um público<br>que busca <em>experiências.</em></h2>
+      <p class="publico-lead">
+        Os usuários do Zone são pessoas entre 18 e 35 anos, urbanas, conectadas e frequentadoras ativas de eventos. Elas não esperam que um evento apareça no feed por acaso. Elas abrem o Zone com intenção de descobrir algo.<br><br>
+        Isso significa que quando seu evento aparece para elas, elas estão no momento certo para decidir ir.
+      </p>
+    </div>
+    <div class="publico-stats">
+      <div class="stat-cell">
+        <div class="stat-num">18–35</div>
+        <div class="stat-label">Faixa etária principal do público Zone</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Focado em descoberta de eventos e experiências</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">Local</div>
+        <div class="stat-label">Recomendação baseada em localização e gostos</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">Gratuito</div>
+        <div class="stat-label">Publicar eventos no Zone não tem custo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-c">
+  <div class="cta-c-bg"></div>
+  <h2>Pronto para publicar<br>seu <em>próximo evento?</em></h2>
+  <p>Baixe o app, crie seu perfil e coloque seu evento na frente de quem quer estar lá.</p>
+  <div class="cta-c-actions">
+    <a href="#" class="btn-primary">Criar um evento</a>
+    <a href="suporte.html" class="btn-ghost">Falar com o suporte</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <a href="index.html" class="footer-logo">
+      <img src="logo_branco.png" alt="Zone">
+    </a>
+    <ul class="footer-links">
+      <li><a href="criadores.html">Para Criadores</a></li>
+      <li><a href="suporte.html">Suporte</a></li>
+      <li><a href="politicas.html">Termos de Uso</a></li>
+      <li><a href="politicas.html">Política de Privacidade</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Zone. Todos os direitos reservados.</p>
+    <p class="footer-copy">Descubra onde você vai hoje.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const drawer = document.getElementById('nav-drawer');
+  const btn = document.querySelector('.nav-hamburger');
+  const isOpen = drawer.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+</script>
+</body>
+</html>

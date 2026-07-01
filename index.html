@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zone: Descubra onde você vai hoje</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fontsource-variable/satoshi@latest/index.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo_branco.png" alt="Zone">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="criadores.html">Para criadores</a></li>
+    <li><a href="suporte.html">Suporte</a></li>
+    <li><a href="#" class="nav-cta">Baixar o app</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="nav-drawer">
+  <a href="#como-funciona" onclick="toggleMenu()">Como funciona</a>
+  <a href="criadores.html">Para criadores</a>
+  <a href="suporte.html">Suporte</a>
+  <a href="#" class="drawer-cta">Baixar o app</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-video-wrap">
+    <!-- Placeholder para vídeo real de fundo -->
+    <video autoplay muted loop playsinline poster="">
+      <!-- <source src="hero-video.mp4" type="video/mp4"> -->
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    </div>
+    <h1 class="fade-up d1">
+      Descubra<br><em>onde</em><br>você vai <em>hoje</em>.
+    </h1>
+    <p class="hero-sub fade-up d2">
+      Pare de descobrir eventos depois que eles acontecem. O Zone te mostra o que está rolando agora, perto de você, e te ajuda a decidir onde ir.
+    </p>
+    <div class="btn-store-group fade-up d3">
+      <a href="#" class="btn-store btn-ios">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Baixar para iOS
+      </a>
+      <a href="#" class="btn-store btn-android">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a1.05 1.05 0 0 1-.64-.22 1.1 1.1 0 0 1-.4-.87V1.33a1.1 1.1 0 0 1 .4-.87L3 .5l11.93 11.93L3 24l.18-.24zM20.46 13.6l-2.67 1.55-2.6-2.6 2.6-2.6 2.68 1.55a1.1 1.1 0 0 1 0 2.1zM4.44 1.07l10.7 10.7-2.5 2.5L2.74 4.37c.34-.97.87-2.28 1.7-3.3zM4.44 22.93c-.83-1.02-1.36-2.33-1.7-3.3l9.9-9.9 2.5 2.5-10.7 10.7z"/></svg>
+        Baixar para Android
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-section">
+  <div class="marquee-label"><span class="marquee-label-text">Próximos eventos</span></div>
+  <div class="marquee-fade-right"></div>
+  <div class="marquee-track" id="marquee">
+    <!-- items duplicated via JS for seamless loop -->
+  </div>
+</div>
+
+<!-- ── PERSONALIZAÇÃO ── -->
+<section class="personalize">
+  <div class="personalize-inner">
+    <div class="personalize-text">
+      <div class="eyebrow">Feito para você</div>
+      <h2>Experiências que<br><em>combinam</em><br>com você.</h2>
+      <p>O Zone aprende com seus gostos e entrega o que faz sentido para você. Nada de listas genéricas. Só o que você realmente vai querer ir.</p>
+      <a href="#" class="btn-outline">Baixar o app</a>
+    </div>
+    <div class="personalize-visual">
+      <div class="phone-mockup">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-header">
+            <div>
+              <div class="phone-greeting">Boa noite<strong>Seu feed</strong></div>
+            </div>
+            <div class="phone-avatar"></div>
+          </div>
+          <div class="phone-card">
+            <div class="phone-card-tag">Recomendado para você</div>
+            <div class="phone-card-title">Festival de Música Eletrônica</div>
+            <div class="phone-card-meta">Sab · 23 ago · 22h · Centro</div>
+            <div class="phone-card-pill">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              128 amigos vão
+            </div>
+          </div>
+          <div class="phone-card-sm">
+            <div class="phone-card-sm-dot"></div>
+            <div class="phone-card-sm-text">
+              <div class="phone-card-sm-name">Show Cultural · Lapa</div>
+              <div class="phone-card-sm-sub">Sex · 22 ago · 20h</div>
+            </div>
+            <div class="phone-card-sm-btn">Ver</div>
+          </div>
+          <div class="phone-card-sm">
+            <div class="phone-card-sm-dot"></div>
+            <div class="phone-card-sm-text">
+              <div class="phone-card-sm-name">Festa Alternativa · Centro</div>
+              <div class="phone-card-sm-sub">Dom · 24 ago · 23h</div>
+            </div>
+            <div class="phone-card-sm-btn">Ver</div>
+          </div>
+          <div class="phone-card-sm">
+            <div class="phone-card-sm-dot"></div>
+            <div class="phone-card-sm-text">
+              <div class="phone-card-sm-name">Stand-up Comedy · Vila</div>
+              <div class="phone-card-sm-sub">Ter · 26 ago · 19h30</div>
+            </div>
+            <div class="phone-card-sm-btn">Ver</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROBLEMA ── -->
+<section class="problem">
+  <div class="problem-inner">
+    <div class="problem-text">
+      <div class="eyebrow">O problema</div>
+      <h2>As melhores<br>experiências<br>estão <em>espalhadas.</em></h2>
+      <p>Você descobre eventos pelo Instagram, pelo grupo do WhatsApp, pelo TikTok. E mesmo assim ainda perde o que seria sua noite favorita do ano. O Zone centraliza tudo isso.</p>
+    </div>
+    <div class="problem-list">
+      <div class="problem-item">
+        <div class="problem-q">Quantos eventos bons você perdeu?</div>
+        <div class="problem-a">Soube depois que rolou aquele show incrível na sua cidade e você não estava lá. Com o Zone, isso não acontece mais.</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-q">Quanto tempo você perdeu buscando?</div>
+        <div class="problem-a">Abrir cinco apps diferentes para tentar montar um plano para o fim de semana não deveria ser necessário.</div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-q">Você nunca encontra o que combina com você?</div>
+        <div class="problem-a">Plataformas genéricas recomendam o que tem mais anúncio, não o que combina com você.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TIPOS DE EVENTO ── -->
+<section class="event-types">
+  <div class="event-types-inner">
+    <div class="eyebrow">Para todo mundo</div>
+    <h2>Do que você gosta,<br>você vai encontrar.</h2>
+    <p>O Zone é para qualquer experiência, qualquer gosto, qualquer estilo de vida.</p>
+    <div class="tags-cloud">
+      <span class="tag tag-accent">Música Eletrônica</span>
+      <span class="tag tag-accent">Festas</span>
+      <span class="tag tag-accent">Festivais</span>
+      <span class="tag tag-accent">Shows</span>
+      <span class="tag">Exposições</span>
+      <span class="tag">Gastronomia</span>
+      <span class="tag">Teatro</span>
+      <span class="tag">Stand-up</span>
+      <span class="tag">Palestras</span>
+      <span class="tag">Esportes</span>
+      <span class="tag">Vida noturna</span>
+      <span class="tag">Cinema ao ar livre</span>
+      <span class="tag">Rock</span>
+      <span class="tag">Cultura alternativa</span>
+      <span class="tag">Bem-estar</span>
+      <span class="tag">Experiências urbanas</span>
+      <span class="tag">+ muito mais</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA PARA CRIADORES ── -->
+<section class="creators-cta">
+  <div class="creators-cta-inner">
+    <div class="creators-cta-text">
+      <div class="eyebrow">Para criadores de eventos</div>
+      <h2>Publique seu<br>evento e encontre<br>o <em>público certo.</em></h2>
+      <p>O Zone não é só onde você lista um evento. É onde o seu evento vai ao encontro de quem realmente quer estar lá. Recomendação personalizada, alcance qualificado.</p>
+      <a href="criadores.html">Saiba mais</a>
+    </div>
+    <div class="creators-points">
+      <div class="creator-point">
+        <span class="creator-point-num">01</span>
+        <div>
+          <h3>Recomendação personalizada</h3>
+          <p>Seu evento aparece para usuários com interesses alinhados ao que você oferece. Não é exposição genérica, é alcance qualificado.</p>
+        </div>
+      </div>
+      <div class="creator-point">
+        <span class="creator-point-num">02</span>
+        <div>
+          <h3>Feed 100% dedicado a eventos</h3>
+          <p>No Zone, o foco total é a descoberta de experiências. Seu evento não compete com memes nem com posts patrocinados.</p>
+        </div>
+      </div>
+      <div class="creator-point">
+        <span class="creator-point-num">03</span>
+        <div>
+          <h3>Mapa e localização em tempo real</h3>
+          <p>Seu evento aparece no mapa para pessoas próximas que estão buscando algo para fazer naquele dia ou região.</p>
+        </div>
+      </div>
+      <div class="creator-point">
+        <span class="creator-point-num">04</span>
+        <div>
+          <h3>Gratuito para publicar</h3>
+          <p>Criar sua conta e publicar eventos no Zone não tem custo. Simples, rápido, sem burocracia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA FINAL ── -->
+<section class="cta-final">
+  <div class="cta-final-bg"></div>
+  <img src="logo_branco.png" alt="Zone" class="cta-logo-big">
+  <h2>Seu próximo evento<br>favorito está<br><em>esperando.</em></h2>
+  <p>Baixe o Zone e nunca mais pergunte "Hoje é onde?".</p>
+  <div class="btn-store-group">
+    <a href="#" class="btn-store btn-ios">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Baixar para iOS
+    </a>
+    <a href="#" class="btn-store btn-android">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a1.05 1.05 0 0 1-.64-.22 1.1 1.1 0 0 1-.4-.87V1.33a1.1 1.1 0 0 1 .4-.87L3 .5l11.93 11.93L3 24l.18-.24zM20.46 13.6l-2.67 1.55-2.6-2.6 2.6-2.6 2.68 1.55a1.1 1.1 0 0 1 0 2.1zM4.44 1.07l10.7 10.7-2.5 2.5L2.74 4.37c.34-.97.87-2.28 1.7-3.3zM4.44 22.93c-.83-1.02-1.36-2.33-1.7-3.3l9.9-9.9 2.5 2.5-10.7 10.7z"/></svg>
+      Baixar para Android
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-main">
+    <a href="index.html" class="footer-logo"><img src="logo_branco.png" alt="Zone"></a>
+    <ul class="footer-links">
+      <li><a href="criadores.html">Para Criadores</a></li>
+      <li><a href="suporte.html">Suporte</a></li>
+      <li><a href="politicas.html">Termos de Uso</a></li>
+      <li><a href="politicas.html">Política de Privacidade</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Zone. Todos os direitos reservados.</p>
+    <p class="footer-copy">Descubra onde você vai hoje.</p>
+  </div>
+</footer>
+
+<script>
+/* ── hamburger ── */
+function toggleMenu() {
+  const d = document.getElementById('nav-drawer');
+  const b = document.querySelector('.nav-hamburger');
+  const open = d.classList.toggle('open');
+  b.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
+/* ── marquee ── */
+const events = [
+  { name: 'Festival de Música Eletrônica', meta: '23 ago · 22h · Centro' },
+  { name: 'Stand-up Comedy Night', meta: '24 ago · 20h · Lapa' },
+  { name: 'Exposição de Arte Urbana', meta: '25 ago · 14h · Museu' },
+  { name: 'Festa Cultura Alternativa', meta: '30 ago · 23h · Vila' },
+  { name: 'Show de Rock Nacional', meta: '31 ago · 21h · Arena' },
+  { name: 'Festival Gastronômico', meta: '06 set · 12h · Parque' },
+  { name: 'Noite do Jazz', meta: '07 set · 20h · Bar Cultural' },
+  { name: 'Feira de Artes', meta: '13 set · 10h · Centro' },
+  { name: 'Show Eletrônico ao Ar Livre', meta: '14 set · 22h · Praia' },
+  { name: 'Teatro Experimental', meta: '20 set · 19h · Casa de Shows' },
+];
+
+function buildMarquee() {
+  const track = document.getElementById('marquee');
+  const doubled = [...events, ...events];
+  track.innerHTML = doubled.map(e => `
+    <div class="marquee-item">
+      <div class="marquee-dot"></div>
+      <div>
+        <div class="marquee-event-name">${e.name}</div>
+        <div class="marquee-event-meta">${e.meta}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+buildMarquee();
+</script>
+</body>
+</html>
