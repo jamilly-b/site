@@ -253,6 +253,14 @@ nav {
   border: 1px solid rgba(243,242,245,0.15);
 }
 
+.btn-android img {
+  width: 16px;
+  height: 16px;
+  display: block;
+  filter: grayscale(1) brightness(1.35);
+  opacity: 0.7;
+}
+
 .btn-android:hover { color: var(--white); border-color: rgba(243,242,245,0.3); transform: translateY(-2px); }
 
 /* ── MARQUEE de eventos ── */
@@ -408,64 +416,12 @@ nav {
   position: relative;
 }
 
-.phone-mockup {
+.phone-mockup-image {
   width: 100%;
   max-width: 300px;
-  margin: 0 auto;
+  height: auto;
   display: block;
-  aspect-ratio: 9/19;
-  background: var(--gray2);
-  border-radius: 36px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
-}
-
-.phone-screen {
-  width: 100%; height: 100%;
-  background: linear-gradient(160deg, #1a1a2e 0%, #0e0e1a 60%, #1a0a22 100%);
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 1.25rem 1.5rem;
-  gap: 0.875rem;
-}
-
-.phone-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-}
-
-.phone-logo {
-  font-family: var(--font-display);
-  font-size: 0.875rem;
-  color: var(--white);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.phone-notch {
-  width: 60px; height: 10px;
-  background: var(--black);
-  border-radius: 100px;
-  position: absolute;
-  top: 10px;
-  left: 50%; transform: translateX(-50%);
-}
-
-.phone-avatar {
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  background: var(--purple);
-}
-
-.phone-greeting {
-  font-size: 0.65rem;
-  font-weight: 300;
-  color: rgba(243,242,245,0.35);
-  letter-spacing: 0.04em;
+  margin: 0 auto;
 }
 
 .phone-greeting strong {
@@ -1104,7 +1060,7 @@ footer {
 
   .personalize { padding: 5rem 1.25rem; }
   .personalize-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .phone-mockup { max-width: 240px; }
+  .phone-mockup-image { max-width: 240px; }
 
   .problem { padding: 5rem 1.25rem; }
   .problem-inner { grid-template-columns: 1fr; gap: 3rem; }
