@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evento no Zone: Descubra onde você vai hoje</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fontsource-variable/satoshi@latest/index.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Meta tags Open Graph (WhatsApp, Telegram, etc) -->
+  <meta property="og:title" content="Confira este evento no Zone!" />
+  <meta property="og:description" content="Baixe o aplicativo Zone para ver todas as informações do evento e garantir sua presença." />
+  <meta property="og:image" content="https://zone.app.br/img/logo.png" />
+  <meta property="og:url" content="https://zone.app.br/event" />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <img src="../img/logo.png" alt="Zone">
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#como-funciona">Como funciona</a></li>
+    <li><a href="../criadores.html">Para criadores</a></li>
+    <li><a href="../suporte.html">Suporte</a></li>
+    <li><a href="#" class="nav-cta">Baixar o app</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="nav-drawer">
+  <a href="../index.html#como-funciona" onclick="toggleMenu()">Como funciona</a>
+  <a href="../criadores.html">Para criadores</a>
+  <a href="../suporte.html">Suporte</a>
+  <a href="#" class="drawer-cta">Baixar o app</a>
+</div>
+
+<!-- HERO FALLBACK -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="eyebrow fade-up d1">Evento no Zone</div>
+    <h1 class="fade-up d1">
+      Veja este evento<br>no <em>nosso app</em>.
+    </h1>
+    <p class="hero-sub fade-up d2">
+      Para visualizar todas as informações, localização no mapa e confirmar presença neste evento, abra ou baixe o aplicativo Zone.
+    </p>
+    
+    <div class="btn-store-group fade-up d3">
+      <a href="https://apps.apple.com/br/app/zone/id6786116041" class="btn-store btn-ios">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Baixar para iOS
+      </a>
+      <a href="../android.html" class="btn-store btn-android">
+        <img src="../img/android-logo-svgrepo-com.svg" alt="" aria-hidden="true" class="android-icon">
+        Baixar para Android
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <a href="../index.html" class="footer-logo"><img src="../img/logo.png" alt="Zone"></a>
+    <ul class="footer-links">
+      <li><a href="../criadores.html">Para Criadores</a></li>
+      <li><a href="../suporte.html">Suporte</a></li>
+      <li><a href="../politicas.html">Termos de Uso</a></li>
+      <li><a href="../politicas.html">Política de Privacidade</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 Zone. Todos os direitos reservados.</p>
+    <p class="footer-copy">Descubra onde você vai hoje.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const d = document.getElementById('nav-drawer');
+  const b = document.querySelector('.nav-hamburger');
+  const open = d.classList.toggle('open');
+  b.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+</script>
+</body>
+</html>

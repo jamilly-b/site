@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.pdm.zone",
+      "sha256_cert_fingerprints": [
+        "1E:D5:43:88:78:D8:36:F4:F7:51:65:FE:DB:1B:B3:10:2D:C4:11:4A:6E:A1:AA:DA:F7:53:9C:97:E6:0D:5B:D3"
+      ]
+    }
+  }
+]

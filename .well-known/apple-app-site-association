@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "4T57XH795H.com.pdm.zone",
+        "paths": [
+          "/event/*",
+          "/u/*"
+        ]
+      }
+    ]
+  }
+}
