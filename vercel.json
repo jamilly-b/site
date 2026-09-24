@@ -23,18 +23,18 @@
     {
       "source": "/u/:path*",
       "destination": "/u/index.html"
-    }
+    },
+    {
+      "source": "/event/:path*",
+      "destination": "/event/index.html"
+    },
     {
       "source": "/mapa",
       "destination": "https://zone-mapa-web.jamillybraga03.workers.dev/"
     },
     {
-      "source": "/mapa/assets/:path*",
-      "destination": "https://zone-mapa-web.jamillybraga03.workers.dev/assets/:path*"
-    },
-    {
-      "source": "/event/:path*",
-      "destination": "https://zone-mapa-web.jamillybraga03.workers.dev/event/:path*"
+      "source": "/mapa/:path*",
+      "destination": "https://zone-mapa-web.jamillybraga03.workers.dev/:path*"
     }
   ]
 }
